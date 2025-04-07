@@ -1,0 +1,227 @@
+/* ============================================= */
+/* CSS Styles for Login Page (login.css)         */
+/* ============================================= */
+
+/* --- Variables (for easy customization) --- */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --primary-hover-color: #0056b3; /* Darker Blue */
+    --danger-color: #dc3545; /* Red */
+    --danger-background: #f8d7da;
+    --success-color: #28a745; /* Green */
+    --success-background: #d4edda;
+    --text-color: #333;
+    --label-color: #555;
+    --input-border-color: #ced4da;
+    --input-focus-border-color: #80bdff;
+    --link-color: #007bff;
+    --background-color: #f4f7f6; /* Light grey page background */
+    --card-background: #ffffff; /* White card background */
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 6px;
+    --font-family: 'Cairo', sans-serif; /* Use Cairo font */
+}
+
+/* --- General Body Styling --- */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* --- Authentication Container --- */
+/* Centers the card on the page */
+.auth-container {
+    width: 100%;
+    padding: 20px; /* Padding on smaller screens */
+    box-sizing: border-box;
+}
+
+/* --- Authentication Card --- */
+.auth-card {
+    background-color: var(--card-background);
+    padding: 30px 40px; /* Generous padding inside the card */
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    max-width: 450px; /* Max width of the login card */
+    width: 100%; /* Make it responsive */
+    margin: 0 auto; /* Center the card horizontally */
+    box-sizing: border-box;
+}
+
+/* --- Authentication Header --- */
+.auth-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.auth-header .logo {
+    display: block;
+    font-size: 2.5em; /* Larger logo size */
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+.auth-header .logo:hover {
+    color: var(--primary-hover-color);
+}
+
+.auth-header h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+    color: var(--text-color);
+}
+
+.auth-header p {
+    margin: 0;
+    color: var(--label-color);
+    font-size: 1em;
+}
+
+/* --- Alert Messages --- */
+.alert {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    font-size: 0.95em;
+    text-align: center;
+}
+
+.alert-success {
+    color: #155724; /* Darker green text */
+    background-color: var(--success-background);
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    color: #721c24; /* Darker red text */
+    background-color: var(--danger-background);
+    border-color: #f5c6cb;
+}
+
+/* --- Form Styling --- */
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+/* --- Labels --- */
+label {
+    display: block; /* Make label take its own line */
+    margin-bottom: 8px; /* Space below label */
+    font-weight: 700; /* Bold labels */
+    color: var(--label-color);
+    font-size: 0.9em;
+}
+
+/* --- Input Fields --- */
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 12px 15px; /* Comfortable padding */
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--font-family); /* Inherit font */
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none; /* Remove default outline */
+    border-color: var(--input-focus-border-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow effect */
+}
+
+/* --- Error Text Styling --- */
+.error-text {
+    color: var(--danger-color);
+    font-size: 0.85em;
+    display: block; /* Ensure it takes its own line */
+    margin-top: 5px; /* Space above error message */
+}
+
+/* --- Form Options (Placeholder) --- */
+.form-options {
+    /* Add styles here later if needed for 'Remember Me' or 'Forgot Password' */
+    /* Example: display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; */
+}
+
+/* --- Button Styling --- */
+.btn {
+    display: inline-block; /* Basic button display */
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-family);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff; /* White text */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active {
+    background-color: #004085; /* Even darker blue when clicked */
+}
+
+.btn-block {
+    width: 100%; /* Make button full width */
+    display: block; /* Ensure it takes full width */
+}
+
+/* --- Authentication Footer --- */
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: var(--label-color);
+}
+
+.auth-footer a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 25px 20px; /* Reduce padding on very small screens */
+    }
+    .auth-header .logo {
+        font-size: 2em; /* Slightly smaller logo */
+    }
+     .auth-header h2 {
+        font-size: 1.5em; /* Smaller title */
+    }
+}

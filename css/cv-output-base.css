@@ -1,0 +1,352 @@
+/* ========================================= */
+/* css/cv-output-base.css                    */
+/* التنسيقات الأساسية المشتركة لجميع الأنماط */
+/* ========================================= */
+
+/* --- إعادة تعيين أساسية وضبط النموذج --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* نموذج صندوق أفضل */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* استخدام rem كوحدة أساسية لتسهيل التدرج */
+    font-size: 16px; /* يمكن تعديله لاحقًا في print.css لجعله أصغر */
+}
+
+body.cv-output-page {
+    font-family: 'Cairo', sans-serif; /* الخط الأساسي */
+    line-height: 1.6; /* تباعد أسطر مريح للقراءة */
+    color: #333; /* لون النص الأساسي */
+    background-color: #f4f7f6; /* لون خلفية فاتح للصفحة (للعرض على الشاشة) */
+    -webkit-font-smoothing: antialiased; /* تحسين عرض الخطوط */
+    -moz-osx-font-smoothing: grayscale;
+    direction: rtl; /* الاتجاه الأساسي */
+}
+
+/* --- شريط الإجراءات (للعرض على الشاشة فقط) --- */
+.cv-actions.no-print {
+    background-color: #343a40; /* خلفية داكنة للشريط */
+    color: #f8f9fa; /* لون نص فاتح */
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* تثبيت الشريط في الأعلى عند التمرير */
+    top: 0;
+    z-index: 900;
+}
+
+.cv-actions .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* مسافات بين العناصر */
+    flex-wrap: wrap; /* للسماح بالالتفاف في الشاشات الصغيرة */
+}
+
+.cv-actions span {
+    opacity: 0.7;
+}
+.cv-actions strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+.cv-actions .btn,
+.cv-actions button {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.cv-actions .btn:hover,
+.cv-actions button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    color: #fff;
+}
+.cv-actions .cta-btn { /* زر الطباعة الرئيسي */
+    background-color: var(--primary-color, #007bff);
+    border-color: var(--primary-color, #007bff);
+    color: #fff;
+}
+.cv-actions .cta-btn:hover {
+     background-color: var(--primary-dark, #0056b3);
+     border-color: var(--primary-dark, #0056b3);
+     color: #fff;
+}
+.cv-actions i {
+    margin-left: 5px; /* مسافة يسار الأيقونة */
+}
+
+
+/* --- حاوية السيرة الذاتية (تشبه الورقة) --- */
+.cv-paper {
+    background-color: #ffffff; /* خلفية بيضاء للورقة */
+    padding: 2.5cm 2cm; /* هوامش داخلية تشبه هوامش A4 */
+    margin: 30px auto; /* توسيط الورقة مع هامش علوي وسفلي */
+    max-width: 21cm; /* عرض يقارب A4 */
+    min-height: 29.7cm; /* ارتفاع يقارب A4 (قد لا يكون ضروريًا دائمًا) */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* ظل ناعم للشاشة */
+    border-radius: 3px; /* حواف طفيفة جدًا */
+    position: relative; /* لتحديد المواقع الداخلية إذا لزم الأمر */
+}
+
+/* --- تنسيقات عامة للعناوين --- */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em; /* هامش سفلي */
+    font-weight: 600; /* وزن خط أثقل قليلاً */
+    color: #222; /* لون أغمق قليلاً للعناوين */
+    line-height: 1.3; /* تباعد أسطر أقل قليلاً للعناوين */
+}
+
+/* --- تنسيق الهيدر (المعلومات الشخصية) --- */
+.cv-header {
+    text-align: center; /* توسيط مبدئي، يمكن تغييره بالأنماط */
+    margin-bottom: 1.5rem; /* مسافة أسفل الهيدر */
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color, #007bff); /* خط فاصل بلون أساسي */
+}
+
+.cv-header h1 { /* الاسم */
+    font-size: 2.2rem; /* حجم كبير للاسم */
+    color: var(--primary-color, #007bff); /* لون أساسي للاسم */
+    margin-bottom: 0.2em;
+    font-weight: 700;
+}
+
+.cv-header h2 { /* المسمى الوظيفي */
+    font-size: 1.3rem;
+    color: #555;
+    font-weight: 400; /* وزن أخف للمسمى */
+    margin-bottom: 0.8em;
+}
+
+.contact-info {
+    display: flex; /* استخدام flex لتوزيع العناصر */
+    flex-wrap: wrap; /* السماح بالالتفاف */
+    justify-content: center; /* توسيط العناصر */
+    gap: 10px 20px; /* مسافات بين العناصر (عمودي أفقي) */
+    font-size: 0.9rem; /* حجم خط أصغر لمعلومات الاتصال */
+    color: #444;
+}
+
+.contact-info span {
+    display: inline-flex; /* لمحاذاة الأيقونة والنص */
+    align-items: center;
+    white-space: nowrap; /* منع التفاف النص داخل العنصر الواحد */
+}
+
+.contact-info i {
+    margin-left: 6px; /* مسافة يسار الأيقونة */
+    color: var(--primary-color, #007bff); /* لون الأيقونات */
+    font-size: 1.1em; /* حجم أكبر قليلاً للأيقونة */
+    width: 1.2em; /* تحديد عرض لضمان المحاذاة */
+    text-align: center;
+}
+
+.contact-info a {
+    color: inherit; /* استخدام نفس لون النص */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: var(--primary-dark, #0056b3); /* تغيير اللون عند المرور */
+    text-decoration: underline;
+}
+
+/* --- تنسيق قسم الملخص المهني --- */
+.cv-section.cv-summary {
+    margin-top: 1.5rem; /* مسافة علوية بعد الهيدر */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0; /* لا حاجة لخط سفلي هنا عادةً */
+    border-bottom: none;
+}
+
+.cv-summary p {
+    font-size: 1rem; /* حجم خط مناسب للملخص */
+    line-height: 1.6;
+    color: #444;
+    text-align: justify; /* ضبط النص (اختياري) */
+}
+
+/* --- تنسيق الأقسام العامة (تعليم، خبرة، مهارات، شهادات) --- */
+.cv-section {
+    margin-bottom: 1.5rem; /* مسافة بين الأقسام */
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0; /* خط فاصل خفيف بين الأقسام */
+}
+
+/* إزالة الحد السفلي لآخر قسم */
+.cv-paper > .cv-section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color, #007bff); /* لون العنوان الأساسي */
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--primary-color, #007bff); /* خط تحت العنوان */
+    display: inline-block; /* لجعل الخط يمتد فقط تحت النص */
+}
+
+/* --- تنسيق الإدخالات داخل الأقسام (تعليم، خبرة، شهادات) --- */
+.cv-entry {
+    margin-bottom: 1rem; /* مسافة بين الإدخالات */
+    padding-right: 10px; /* مسافة بادئة طفيفة (لـ RTL) */
+    position: relative;
+}
+.cv-entry:last-child {
+    margin-bottom: 0;
+}
+
+/* (اختياري) إضافة خط عمودي بجانب الإدخالات */
+/* .cv-entry::before {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background-color: #e0e0e0;
+} */
+
+.cv-entry h4 { /* عنوان الإدخال (المؤهل، المسمى الوظيفي، اسم الشهادة) */
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.1em;
+}
+
+.cv-entry .institution,
+.cv-entry .company { /* اسم المؤسسة أو الشركة */
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.1em;
+}
+.cv-entry .location {
+    font-weight: 400;
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+}
+.cv-entry .separator {
+    margin: 0 5px;
+    color: #999;
+}
+
+
+.cv-entry .dates { /* التواريخ */
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.4em;
+    font-style: italic;
+}
+
+.cv-entry .description { /* الوصف الإضافي للتعليم */
+    font-size: 0.95rem;
+    color: #555;
+    padding-right: 10px; /* مسافة بادئة للوصف */
+    margin-top: 0.3em;
+}
+
+/* --- تنسيق قائمة المهام (داخل الخبرة) --- */
+.task-list-output {
+    list-style-type: disc; /* استخدام نقاط قياسية */
+    margin-top: 0.5em;
+    margin-right: 25px; /* مسافة بادئة للقائمة */
+    padding-right: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.task-list-output li {
+    margin-bottom: 0.3em; /* مسافة بين المهام */
+    line-height: 1.5;
+}
+
+/* --- تنسيق قائمة المهارات --- */
+.cv-skills .skills-list-output {
+    list-style: none; /* إزالة النقاط الافتراضية */
+    padding: 0;
+    margin: 0;
+    display: flex; /* استخدام flex لعرض المهارات */
+    flex-wrap: wrap; /* السماح بالالتفاف */
+    gap: 8px 12px; /* مسافات بين المهارات */
+}
+
+.cv-skills .skills-list-output li {
+    background-color: #e9ecef; /* خلفية فاتحة للمهارة */
+    color: #495057; /* لون نص أغمق قليلاً */
+    padding: 4px 12px; /* هوامش داخلية */
+    border-radius: 15px; /* حواف دائرية */
+    font-size: 0.9rem; /* حجم خط مناسب */
+    white-space: nowrap; /* منع التفاف المهارة الواحدة */
+}
+
+/* --- تنسيق قسم الشهادات --- */
+/* يستخدم نفس تنسيق .cv-entry بشكل كبير */
+.cv-certificates .institution { /* يستخدم لعرض الجهة والتاريخ */
+    font-size: 0.95rem;
+    font-weight: 400; /* وزن أخف */
+    color: #666;
+    margin-bottom: 0;
+}
+.cv-certificates .institution .date {
+     font-style: italic;
+}
+
+
+/* --- تنسيقات إضافية عامة --- */
+a {
+    color: var(--primary-color, #007bff);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr { /* خطوط الفصل الأفقية (إذا استخدمت) */
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 1rem 0;
+}
+
+/* --- استجابة أساسية (يمكن تخصيصها أكثر) --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* تصغير حجم الخط الأساسي قليلاً للشاشات الصغيرة */
+    }
+    .cv-paper {
+        padding: 2cm 1.5cm; /* تقليل الهوامش */
+        margin: 15px auto;
+        max-width: 95%; /* جعل العرض أكثر مرونة */
+        min-height: auto; /* إلغاء الارتفاع الأدنى */
+    }
+    .cv-header h1 { font-size: 1.9rem; }
+    .cv-header h2 { font-size: 1.1rem; }
+    .contact-info { font-size: 0.85rem; gap: 8px 15px; }
+    .section-title { font-size: 1.25rem; }
+    .cv-entry h4 { font-size: 1rem; }
+    .cv-entry .institution, .cv-entry .company { font-size: 0.95rem; }
+    .cv-entry .dates { font-size: 0.85rem; }
+    .cv-entry .description, .task-list-output { font-size: 0.9rem; }
+    .cv-skills .skills-list-output li { font-size: 0.85rem; padding: 3px 10px; }
+}
+
