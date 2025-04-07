@@ -1,0 +1,597 @@
+/* ========================================= */
+/* css/cv-output-themes.css                  */
+/* تنسيقات خاصة بكل نمط (Theme)             */
+/* ========================================= */
+
+/* --- 1. النمط الكلاسيكي (Classic) --- */
+.style-classic {
+    --theme-primary-color: #2c3e50; /* كحلي داكن */
+    --theme-secondary-color: #7f8c8d; /* رمادي */
+    --theme-header-bg: #ffffff;
+    --theme-header-text: #2c3e50;
+    --theme-section-title-border: #bdc3c7; /* رمادي فاتح للحدود */
+    --theme-body-font: 'Cairo', sans-serif; /* يمكن استخدام خط serif مثل Times New Roman أو Georgia */
+    --theme-heading-font: 'Cairo', sans-serif; /* أو خط serif للعناوين */
+}
+
+.style-classic .cv-paper {
+    border: 1px solid #bdc3c7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.style-classic .cv-header {
+    text-align: left; /* محاذاة لليسار (يمين في RTL) */
+    border-bottom: 2px solid var(--theme-primary-color);
+    background-color: var(--theme-header-bg);
+    padding-bottom: 1rem;
+}
+
+.style-classic .cv-header h1 {
+    font-size: 2rem;
+    color: var(--theme-header-text);
+    font-family: var(--theme-heading-font);
+    margin-bottom: 0.1em;
+}
+
+.style-classic .cv-header h2 {
+    font-size: 1.2rem;
+    color: var(--theme-secondary-color);
+    font-family: var(--theme-body-font);
+    font-weight: 600;
+    margin-bottom: 0.6em;
+}
+
+.style-classic .contact-info {
+    justify-content: flex-start; /* محاذاة لليسار (يمين في RTL) */
+    font-size: 0.85rem;
+    gap: 8px 15px;
+}
+.style-classic .contact-info i {
+    color: var(--theme-secondary-color);
+    font-size: 1em;
+}
+
+.style-classic .cv-summary p {
+    text-align: right; /* ضبط النص لليمين */
+    font-size: 0.95rem;
+}
+
+.style-classic .section-title {
+    font-size: 1.3rem;
+    color: var(--theme-primary-color);
+    border-bottom: 1px solid var(--theme-section-title-border);
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--theme-heading-font);
+    display: block; /* جعل العنوان يمتد بعرض كامل */
+    width: 100%;
+}
+
+.style-classic .cv-entry {
+    padding-right: 0; /* إزالة المسافة البادئة */
+    margin-bottom: 0.9rem;
+}
+.style-classic .cv-entry::before {
+    display: none; /* إزالة الخط العمودي */
+}
+
+.style-classic .cv-entry h4 {
+    font-size: 1.05rem;
+    font-family: var(--theme-heading-font);
+    font-weight: 700;
+    color: var(--theme-primary-color);
+}
+
+.style-classic .cv-entry .institution,
+.style-classic .cv-entry .company {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #444;
+}
+.style-classic .cv-entry .dates {
+    font-size: 0.85rem;
+    color: var(--theme-secondary-color);
+}
+
+.style-classic .task-list-output {
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+.style-classic .skills-list-output li {
+    background-color: transparent;
+    border: 1px solid var(--theme-section-title-border);
+    color: var(--theme-secondary-color);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+.style-classic .cv-certificates .institution {
+    font-size: 0.9rem;
+}
+
+/* --- 2. النمط الحديث (Modern) --- */
+.style-modern {
+    --theme-primary-color: #007bff; /* أزرق */
+    --theme-secondary-color: #6c757d; /* رمادي */
+    --theme-accent-color: #e9ecef; /* رمادي فاتح للخلفيات */
+    --theme-text-color: #212529;
+    --theme-body-font: 'Cairo', sans-serif; /* خط sans-serif حديث */
+    --theme-heading-font: 'Cairo', sans-serif; /* نفس الخط بوزن أثقل */
+}
+
+.style-modern body.cv-output-page {
+    color: var(--theme-text-color);
+}
+
+.style-modern .cv-paper {
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+    border: none;
+    border-radius: 0; /* حواف حادة */
+    padding: 0; /* إزالة الحشو الأساسي للتحكم الكامل */
+    max-width: 21cm; /* الحفاظ على العرض */
+    display: flex; /* استخدام flex لتقسيم الأعمدة */
+    min-height: 29.7cm;
+}
+
+/* تقسيم حديث: عمود جانبي وعمود رئيسي */
+.style-modern .cv-sidebar {
+    width: 30%; /* عرض العمود الجانبي */
+    background-color: var(--theme-primary-color);
+    color: #ffffff;
+    padding: 2cm 1.5cm;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة لليمين في RTL */
+}
+
+.style-modern .cv-main-content {
+    width: 70%; /* عرض العمود الرئيسي */
+    padding: 2cm 1.8cm;
+    background-color: #ffffff;
+}
+
+/* نقل بعض العناصر للعمود الجانبي */
+.style-modern .cv-header {
+    text-align: right;
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0;
+}
+.style-modern .cv-sidebar .cv-header h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 0.3em;
+}
+.style-modern .cv-sidebar .cv-header h2 {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+    margin-bottom: 1.5em;
+}
+.style-modern .cv-sidebar .contact-info {
+    flex-direction: column; /* ترتيب عمودي */
+    align-items: flex-start; /* محاذاة لليمين */
+    gap: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    width: 100%; /* جعل معلومات الاتصال تأخذ عرض الشريط */
+}
+.style-modern .cv-sidebar .contact-info span {
+    width: 100%; /* جعل كل عنصر يأخذ عرض كامل */
+    word-break: break-all; /* للسماح بكسر الروابط الطويلة */
+}
+.style-modern .cv-sidebar .contact-info i {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1em;
+    margin-left: 8px;
+    width: 1.3em;
+}
+.style-modern .cv-sidebar .contact-info a {
+    color: #ffffff;
+}
+.style-modern .cv-sidebar .contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* قسم المهارات والملخص في الشريط الجانبي */
+.style-modern .cv-sidebar .cv-section {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+.style-modern .cv-sidebar .cv-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.style-modern .cv-sidebar .section-title {
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.style-modern .cv-sidebar .cv-summary p {
+     font-size: 0.9rem;
+     line-height: 1.5;
+     color: rgba(255, 255, 255, 0.9);
+     text-align: right;
+}
+
+.style-modern .cv-sidebar .skills-list-output {
+    display: block; /* عرض كقائمة عادية في الشريط الجانبي */
+    list-style: none;
+    padding: 0;
+}
+.style-modern .cv-sidebar .skills-list-output li {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 2px 0;
+    border-radius: 0;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3); /* خط متقطع كفاصل */
+}
+
+/* تنسيقات المحتوى الرئيسي */
+.style-modern .cv-main-content .cv-section {
+     border-bottom: 1px solid #dee2e6;
+     padding-bottom: 1rem;
+     margin-bottom: 1.5rem;
+}
+.style-modern .cv-main-content .cv-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.style-modern .cv-main-content .section-title {
+    font-size: 1.4rem;
+    color: var(--theme-primary-color);
+    border-bottom: 2px solid var(--theme-primary-color);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.style-modern .cv-main-content .cv-entry {
+    padding-right: 0;
+    margin-bottom: 1.2rem;
+}
+.style-modern .cv-main-content .cv-entry::before { display: none; }
+
+.style-modern .cv-main-content .cv-entry h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--theme-text-color);
+}
+
+.style-modern .cv-main-content .cv-entry .institution {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--theme-secondary-color);
+}
+.style-modern .cv-main-content .cv-entry .dates {
+    font-size: 0.9rem;
+    color: #888;
+}
+.style-modern .cv-main-content .task-list-output {
+    margin-right: 20px;
+    font-size: 0.95rem;
+    color: #444;
+}
+.style-modern .cv-main-content .cv-certificates .institution {
+    font-size: 0.95rem;
+    color: var(--theme-secondary-color);
+}
+
+/* --- 3. النمط الإبداعي (Creative) --- */
+.style-creative {
+    --theme-primary-color: #6a1b9a; /* بنفسجي */
+    --theme-secondary-color: #f06292; /* وردي فاتح */
+    --theme-accent-color: #f3e5f5; /* بنفسجي فاتح جداً للخلفيات */
+    --theme-text-color: #311b92; /* أزرق داكن للنص */
+    --theme-body-font: 'Cairo', sans-serif; /* يمكن تجربة خطوط أخرى مثل Lato أو Montserrat */
+    --theme-heading-font: 'Cairo', sans-serif; /* أو خط مميز للعناوين */
+}
+
+.style-creative body.cv-output-page {
+    background-color: var(--theme-accent-color);
+    color: var(--theme-text-color);
+}
+
+.style-creative .cv-paper {
+    border-radius: 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid var(--theme-primary-color); /* شريط علوي ملون */
+    padding: 2cm;
+}
+
+.style-creative .cv-header {
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 2rem;
+    position: relative; /* للسماح بعناصر زخرفية */
+}
+
+/* عنصر زخرفي للهيدر */
+.style-creative .cv-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--theme-secondary-color);
+    margin: 1rem auto 0 auto;
+    border-radius: 2px;
+}
+
+.style-creative .cv-header h1 {
+    font-size: 2.3rem;
+    color: var(--theme-primary-color);
+    font-weight: 700;
+    letter-spacing: 1px; /* تباعد أحرف طفيف */
+}
+
+.style-creative .cv-header h2 {
+    font-size: 1.2rem;
+    color: var(--theme-secondary-color);
+    font-weight: 600;
+    text-transform: uppercase; /* أحرف كبيرة (قد لا تناسب العربية) */
+    letter-spacing: 0.5px;
+}
+
+.style-creative .contact-info {
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    gap: 10px 25px;
+    color: var(--theme-primary-color);
+}
+.style-creative .contact-info i {
+    color: var(--theme-secondary-color);
+    opacity: 0.8;
+}
+.style-creative .contact-info a {
+    color: var(--theme-primary-color);
+    font-weight: 600;
+}
+.style-creative .contact-info a:hover {
+    color: var(--theme-secondary-color);
+}
+
+.style-creative .cv-summary {
+    background-color: var(--theme-accent-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-right: 4px solid var(--theme-secondary-color); /* شريط جانبي */
+    margin-bottom: 2rem;
+}
+.style-creative .cv-summary p {
+    text-align: right;
+    color: var(--theme-text-color);
+    font-size: 1rem;
+}
+
+.style-creative .cv-section {
+    border-bottom: none; /* إزالة الخطوط السفلية */
+    margin-bottom: 1.8rem;
+    padding-bottom: 0;
+}
+
+.style-creative .section-title {
+    font-size: 1.5rem;
+    color: var(--theme-primary-color);
+    border: none;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    text-align: right;
+    position: relative;
+    padding-right: 25px; /* مسافة للأيقونة */
+}
+/* إضافة أيقونة بجانب عنوان القسم */
+.style-creative .section-title::before {
+    font-family: "Font Awesome 6 Free"; /* أو اسم خط الأيقونات المستخدم */
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--theme-secondary-color);
+    font-size: 0.9em;
+    /* تحديد الأيقونة لكل قسم */
+}
+.style-creative .cv-education .section-title::before { content: "\f19d"; } /* fa-graduation-cap */
+.style-creative .cv-experience .section-title::before { content: "\f0b1"; } /* fa-briefcase */
+.style-creative .cv-skills .section-title::before { content: "\f085"; } /* fa-cogs */
+.style-creative .cv-certificates .section-title::before { content: "\f559"; } /* fa-award */
+
+
+.style-creative .cv-entry {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-right: 3px solid var(--theme-primary-color);
+}
+.style-creative .cv-entry::before { display: none; }
+
+.style-creative .cv-entry h4 {
+    font-size: 1.1rem;
+    color: var(--theme-primary-color);
+}
+.style-creative .cv-entry .institution {
+    font-weight: 600;
+    color: var(--theme-text-color);
+}
+.style-creative .cv-entry .dates {
+    color: var(--theme-secondary-color);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.style-creative .task-list-output {
+    margin-right: 15px;
+    padding-right: 0;
+    list-style: none; /* إزالة النقاط */
+}
+.style-creative .task-list-output li {
+    position: relative;
+    padding-right: 15px; /* مسافة للأيقونة */
+    margin-bottom: 5px;
+}
+.style-creative .task-list-output li::before {
+    content: "\f00c"; /* fa-check */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 3px;
+    color: var(--theme-secondary-color);
+    font-size: 0.8em;
+}
+.style-creative .skills-list-output li {
+    background-color: var(--theme-primary-color);
+    color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(106, 27, 154, 0.3);
+}
+
+/* --- 4. النمط البسيط (Simple) --- */
+.style-simple {
+    --theme-primary-color: #343a40; /* أسود أو رمادي داكن جداً */
+    --theme-secondary-color: #6c757d; /* رمادي متوسط */
+    --theme-body-font: 'Cairo', sans-serif; /* خط بسيط ونظيف */
+    --theme-heading-font: 'Cairo', sans-serif;
+}
+
+.style-simple body.cv-output-page {
+    background-color: #ffffff; /* خلفية بيضاء تماماً */
+    color: #212529; /* لون نص أسود تقريباً */
+}
+
+.style-simple .cv-paper {
+    box-shadow: none; /* بدون ظل */
+    border: none; /* بدون حدود */
+    padding: 2cm 1.8cm; /* هوامش جيدة */
+    max-width: 20cm; /* يمكن تصغير العرض قليلاً */
+}
+
+.style-simple .cv-header {
+    text-align: right; /* محاذاة لليمين */
+    border-bottom: 1px solid #dee2e6; /* خط سفلي خفيف جداً */
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.style-simple .cv-header h1 {
+    font-size: 1.9rem;
+    color: var(--theme-primary-color);
+    font-weight: 700;
+    margin-bottom: 0.2em;
+}
+
+.style-simple .cv-header h2 {
+    font-size: 1.1rem;
+    color: var(--theme-secondary-color);
+    font-weight: 400;
+    margin-bottom: 0.8em;
+}
+
+.style-simple .contact-info {
+    justify-content: flex-start; /* محاذاة لليمين */
+    font-size: 0.9rem;
+    gap: 8px 18px;
+    color: #495057;
+}
+.style-simple .contact-info i {
+    display: none; /* إخفاء الأيقونات للتبسيط */
+}
+.style-simple .contact-info a {
+    color: inherit;
+    text-decoration: underline; /* تأكيد الروابط */
+}
+.style-simple .contact-info a:hover {
+    color: var(--theme-primary-color);
+}
+
+.style-simple .cv-summary p {
+    font-size: 0.95rem;
+    line-height: 1.7; /* زيادة تباعد الأسطر قليلاً */
+    text-align: right;
+    color: #343a40;
+}
+
+.style-simple .cv-section {
+    margin-bottom: 1.3rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #f1f3f5; /* خط فاصل فاتح جداً */
+}
+.style-simple .cv-section:last-of-type { border-bottom: none; }
+
+.style-simple .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--theme-primary-color);
+    margin-bottom: 0.8rem;
+    border: none;
+    padding: 0;
+    text-transform: uppercase; /* قد لا يناسب العربية */
+    letter-spacing: 0.5px;
+}
+
+.style-simple .cv-entry {
+    margin-bottom: 0.8rem;
+    padding: 0;
+}
+.style-simple .cv-entry::before { display: none; }
+
+.style-simple .cv-entry h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #343a40;
+}
+.style-simple .cv-entry .institution {
+    font-size: 0.95rem;
+    font-weight: 400; /* وزن أخف */
+    color: var(--theme-secondary-color);
+}
+.style-simple .cv-entry .dates {
+    font-size: 0.85rem;
+    color: #adb5bd; /* لون رمادي فاتح جداً للتواريخ */
+}
+.style-simple .task-list-output {
+    margin-right: 15px;
+    font-size: 0.9rem;
+    color: #495057;
+    list-style-type: circle; /* تغيير شكل النقطة */
+}
+.style-simple .skills-list-output {
+     gap: 6px 10px;
+}
+.style-simple .skills-list-output li {
+    background-color: transparent;
+    color: var(--theme-secondary-color);
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.9rem;
+    /* عرض المهارات كنص مفصول بفواصل أو نقاط */
+    display: inline;
+}
+/* إضافة فاصل بعد كل مهارة ما عدا الأخيرة */
+.style-simple .skills-list-output li:not(:last-child)::after {
+    content: ' • '; /* استخدام نقطة كفاصل */
+    margin: 0 5px;
+    color: #ced4da;
+}
+
+.style-simple .cv-certificates .institution {
+    font-size: 0.9rem;
+    color: var(--theme-secondary-color);
+}
